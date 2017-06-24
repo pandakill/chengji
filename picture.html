@@ -19,7 +19,7 @@
       #imgDiv{
          width: 560px;
          height: 756px;
-         max-height: 20%;
+         max-height: 40%;
          max-width: 100%;
          /*padding: 0.5em;
          text-align: center;*/
@@ -163,16 +163,16 @@
                 mainCtx.fillText("201721884",220,135);
 
                 // 填充姓名
-                mainCtx.font = "small-caps 32px";
-                mainCtx.fillText(getQueryString("name"),520,135);
+                mainCtx.font = "small-caps 24px";
+                mainCtx.fillText(getQueryString("name"),190,135);
 
                 // 填充日期
-                mainCtx.font = "small-caps 32px";
-                mainCtx.fillText(date,1120,135);
+                // mainCtx.font = "small-caps 32px";
+                // mainCtx.fillText(date,1120,135);
 
                 // 填充语文
                 mainCtx.font = "small-caps 32px STXinwei";
-                mainCtx.fillText(yuwen,190,200);
+                mainCtx.fillText(yuwen + "语文",260,600);
 
                 // 填充数学
                 mainCtx.font = "small-caps 32px STXinwei";
