@@ -250,7 +250,7 @@
         starImg.src = $('#starImg').attr('src');
 
         var provinceImg = new Image();
-        provinceImg.src = "https://pandakill.github.io/chengji/img/guangdong.png";
+        provinceImg.src = getProvinceGaizhang(province);
 
         starImg.onload=function(){
               //先把图片绘制在这里
@@ -296,6 +296,79 @@
     }
 
     setTimeout(saveImageInfo,1000);
+
+    function getProvinceGaizhang(province) {
+        var provinceImgSrc = "https://pandakill.github.io/chengji/img/"
+        switch (province) {
+          case "广东省":
+            provinceImgSrc += "guangdong.png";
+            break;
+          case "北京市":
+            provinceImgSrc += "beijing.png";
+            break;
+          case "上海市":
+            provinceImgSrc += "shanghai.png";
+            break;
+          case "重庆市":
+            provinceImgSrc += "chongqing.png";
+            break;
+          case "福建省":
+            provinceImgSrc += "fujian.png";
+            break;
+          case "山东省":
+            provinceImgSrc += "shandong.png";
+            break;
+          case "浙江省":
+            provinceImgSrc += "zhejiang.png";
+            break;
+          case "河南省":
+            provinceImgSrc += "henan.png";
+            break;
+          case "安徽省":
+            provinceImgSrc += "anhui.png";
+            break;
+          case "江苏省":
+            provinceImgSrc += "jiangsu.png";
+            break;
+          case "江西省":
+            provinceImgSrc += "jiangxi.png";
+            break;
+          case "四川省":
+            provinceImgSrc += "sichuan.png";
+            break;
+          case "陕西省":
+            provinceImgSrc += "shanxi.png";
+            break;
+          case "湖南省":
+            provinceImgSrc += "hunan.png";
+            break;
+          case "湖北省":
+            provinceImgSrc += "hubei.png";
+            break;
+          case "海南省":
+            provinceImgSrc += "hainan.png";
+            break;
+          case "甘肃省":
+            provinceImgSrc += "gansu.png";
+            break;
+          case "河北省":
+            provinceImgSrc += "hebei.png";
+            break;
+          case "青海省":
+            provinceImgSrc += "qinghai.png";
+            break;
+          case "贵州省":
+            provinceImgSrc += "guizhou.png";
+            break;
+          case "辽宁省":
+            provinceImgSrc += "liaoning.png";
+            break;
+          case "天津市":
+            provinceImgSrc += "tianjin.png";
+            break;
+          default:
+        }
+    }
 
     function getCanvasContext(id){
         return document.getElementById(id).getContext("2d");
