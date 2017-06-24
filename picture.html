@@ -178,8 +178,6 @@
         var mydate = new Date();
         var date = mydate.getFullYear()+'年'+(mydate.getMonth()+1)+'月'+mydate.getDate() + "日";
         var mainCtx = getCanvasContext('main');
-        var maxWidth = mainCtx.width;
-        var maxHeight = mainCtx.height;
         var type = getQueryString("type");
         var province = getQueryString("province");
         mainCtx.clearRect(0,0,1000,1000);
@@ -210,7 +208,7 @@
               yingyu = Math.floor(Math.random()*(150-120)+120);
               yuwen = Math.floor(Math.random()*(150-100)+100);
               shuxue = Math.floor(Math.random()*(150-100)+100);
-              zonghe = zongfen-(zonghe+yuwen+shuxue);
+              zonghe = zongfen-(yingyu+yuwen+shuxue);
               paiming = Math.floor(Math.random()*(69999-10000)+10000);
               zongpai = Math.floor(Math.random()*(paiming+200-paiming-200)+paiming-200);
             break;
@@ -315,12 +313,18 @@
               // mainCtx.fillText(province,220,675);
 
               console.log("setTimeout之前的时间=" + new Date().getTime());
-              setTimeout(3000);
               mainCtx.drawImage(provinceImg,300,570,133,133);
         };
     }
 
-    setTimeout(saveImageInfo,2000);
+    // function setGaizhang() {
+    //   var mainCtx = getCanvasContext('main');
+    //   var provinceImg = getProvinceGaizhang(getQueryString("province"));
+    //   mainCtx.drawImage(provinceImg,300,570,133,133);
+    // }
+
+    // setTimeout(setGaizhang, 1500);
+    setTimeout(saveImageInfo,3000);
 
     function getProvinceGaizhang(province) {
         var provinceImgSrc = "https://pandakill.github.io/chengji/img/"
