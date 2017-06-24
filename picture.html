@@ -382,7 +382,8 @@
     function saveImageInfo() {
         var mycanvas = document.getElementById("main");
         var image = mycanvas.toDataURL("image/jpg");
-        document.getElementById("imgDiv").innerHTML ="<img id='myImg' src='"+image+"'style='max-width:100%; margin-top:-5px; max-height:100%; vertical-align:middle; float:left;' alt='from canvas'/>";
+        document.getElementById("imgDiv").innerHTML ="<img id='myImg' src='"+image+"'style='max-width:90%; margin-top:-5px; max-height:90%; vertical-align:middle; float:left;' alt='from canvas'/>";
+        alert("saveImageInfo");
     }
 
     function saveAsLocalImage(){
