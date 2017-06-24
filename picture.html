@@ -6,8 +6,8 @@
     <script src="js/jquery.js"></script>
     <style>
       #main {
-         width: 1446px;
-         height: 120px;
+         width: 560px;
+         height: 756px;
          /*padding: 0.5em;
          text-align: center;*/
          vertical-align:middle;
@@ -17,8 +17,8 @@
       }
 
       #imgDiv{
-         width: 1446px;
-         height: 120px;
+         width: 560px;
+         height: 756px;
          max-height: 20%;
          max-width: 100%;
          /*padding: 0.5em;
@@ -39,11 +39,11 @@
 
 <div id="pictureLayout">
     <div style="display:none">
-        <img id="starImg" style="height:100%; width:100%;" src="img/picture.png" />
+        <img id="starImg" style="height:100%; width:100%;" src="img/chengji.png" />
     </div>
     <!-- <canvas id="main" height="730" width="420" style="border:1px solid #d3d3d3;"></canvas> -->
     <!-- TODO：这里需要绘制图片 -->
-    <canvas id="main" height="350px" width="1446px" style="display:none"></canvas>
+    <canvas id="main" height="756px" width="560px" style="display:none"></canvas>
     <!-- <input type="text" id="desc" onblur="hechen()" value="" />-->
     <div id="imgDiv"></div>
 
@@ -142,7 +142,7 @@
         starImg.onload=function(){
             //先把图片绘制在这里
             // TODO：1240是宽度，1750是高度
-            mainCtx.drawImage(starImg,0,0,1446,350);
+            mainCtx.drawImage(starImg,0,0,560,756);
 
             //读取用户的文本
             // if($('#desc').val()){
@@ -206,7 +206,7 @@
         };
     }
 
-    setTimeout(saveImageInfo,600);
+    setTimeout(saveImageInfo,900);
 
     function getCanvasContext(id){
         return document.getElementById(id).getContext("2d");
