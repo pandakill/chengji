@@ -367,8 +367,11 @@
             provinceImgSrc += "tianjin.png";
             break;
           default:
-          console.log("province.img=" + provinceImgSrc);
+            provinceImgSrc += "guangdong.png";
+            break;
         }
+        console.log("province.img=" + provinceImgSrc);
+        return provinceImgSrc;
     }
 
     function getCanvasContext(id){
