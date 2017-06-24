@@ -139,74 +139,50 @@
         var starImg = new Image();
         starImg.src=$('#starImg').attr('src');
 
+        var provinceImg = new Image();
+        provinceImg.src = url("img/guangdong");
+
         starImg.onload=function(){
             //先把图片绘制在这里
             // TODO：1240是宽度，1750是高度
             mainCtx.drawImage(starImg,0,0,560,756);
 
-            //读取用户的文本
-            // if($('#desc').val()){
-            // if(getQueryString("title"))
-                // mainCtx.font = "small-caps bold 18px STXinwei";
-                //设置用户文本填充颜色
-                mainCtx.fillStyle = "black";
-                //从坐标点(50,50)开始绘制文字
-                // mainCtx.fillText($('#desc').val(),108,335);
-                //从坐标点(50,50)开始绘制文字
-                // mainCtx.fillText(getQueryString("name"),460,499);
-                //设置时间填充颜色
-                // mainCtx.font = "small-caps bold 16px STXinwei";
-                // mainCtx.fillText(getQueryString("type"),326,447);
+              //设置用户文本填充颜色
+              mainCtx.fillStyle = "black";
 
-                // 填充考生号
-                // mainCtx.font = "small-caps 32px STXinwei";
-                // mainCtx.fillText("201721884",220,135);
+              // 填充姓名
+              mainCtx.font = "small-caps 22px STXinwei";
+              mainCtx.fillText(getQueryString("name"),200,200);
 
-                // 填充日期
-                // mainCtx.font = "small-caps 32px";
-                // mainCtx.fillText(date,1120,135);
+              // 填充语文
+              mainCtx.font = "small-caps 26px STXinwei";
+              mainCtx.fillText(yuwen,350,390);
 
-                // 填充姓名
-                mainCtx.font = "small-caps 22px STXinwei";
-                mainCtx.fillText(getQueryString("name"),200,200);
+              // 填充数学
+              mainCtx.font = "small-caps 26px STXinwei";
+              mainCtx.fillText(shuxue,350,430);
 
-                // 填充语文
-                mainCtx.font = "small-caps 26px STXinwei";
-                mainCtx.fillText(yuwen,350,390);
+              // 填充综合
+              mainCtx.font = "small-caps 26px STXinwei";
+              mainCtx.fillText(zonghe,350,476);
 
-                // 填充数学
-                mainCtx.font = "small-caps 26px STXinwei";
-                mainCtx.fillText(shuxue,350,430);
+              // 填充英语
+              mainCtx.font = "small-caps 26px STXinwei";
+              mainCtx.fillText(yingyu,350,520);
 
-                // 填充综合
-                mainCtx.font = "small-caps 26px STXinwei";
-                mainCtx.fillText(zonghe,350,476);
+              // 填充总成绩
+              mainCtx.font = "small-caps 26px STXinwei";
+              mainCtx.fillText(zongfen,350,566);
 
-                // 填充英语
-                mainCtx.font = "small-caps 26px STXinwei";
-                mainCtx.fillText(yingyu,350,520);
+              // 填充省份
+              mainCtx.font = "small-caps 20px STXinwei";
+              mainCtx.fillText(province,34,118);
 
-                // 填充总成绩
-                mainCtx.font = "small-caps 26px STXinwei";
-                mainCtx.fillText(zongfen,350,566);
+              // 填充底部省份
+              mainCtx.font = "small-caps 24px STXinwei";
+              mainCtx.fillText(province,200,690);
 
-                // 填充省份
-                mainCtx.font = "small-caps 20px STXinwei";
-                mainCtx.fillText(province,34,118);
-
-                // 填充底部省份
-                mainCtx.font = "small-caps 24px STXinwei";
-                mainCtx.fillText(province,200,690);
-
-                // 填充排位总分
-                // mainCtx.font = "small-caps 32px STXinwei";
-                // mainCtx.fillText(zongpai,480,245);
-
-                // 填充理科排名
-                // mainCtx.font = "small-caps 32px";
-                // mainCtx.fillText(paiming,750,245);
-            // }
-
+              mainCtx.drawImage(provinceImg,350,530,483,663);
         };
     }
 
