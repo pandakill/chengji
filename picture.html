@@ -260,6 +260,16 @@
             break;
         }
 
+        console.log("zongfen=" + zongfen +";shuxue=" + shuxue +";yingyu="+yingyu+";yuwen="+yuwen+";zonghe="+zonghe);
+        if (zongfen > 750
+            || shuxue > 150
+            || yingyu > 150
+            || yuwen > 150
+            || zonghe > 300) {
+          hecheng();
+          return;
+        }
+
         var starImg = new Image();
         starImg.src = $('#starImg').attr('src');
 
