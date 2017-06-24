@@ -194,6 +194,10 @@
                 mainCtx.font = "small-caps 9px";
                 mainCtx.fillText(province,34,118);
 
+                // 填充底部省份
+                mainCtx.font = "small-caps 32px";
+                mainCtx.fillText(province,200,710);
+
                 // 填充排位总分
                 // mainCtx.font = "small-caps 32px STXinwei";
                 // mainCtx.fillText(zongpai,480,245);
@@ -215,10 +219,7 @@
     function saveImageInfo() {
         var mycanvas = document.getElementById("main");
         var image = mycanvas.toDataURL("image/jpg");
-        //var w=window.open('about:blank','image from canvas');
-        // console.log("image = " + image);
         document.getElementById("imgDiv").innerHTML ="<img id='myImg' src='"+image+"'style='max-width:90%; max-height:100%; vertical-align:middle; float:left;' alt='from canvas'/>";
-        // w.document.write("<img src='"+image+"' alt='from canvas'/>");
     }
 
     function saveAsLocalImage(){
