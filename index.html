@@ -1,0 +1,289 @@
+<!-- saved from url=(0161)http://a.super.cn/ncee/index.html?sign=9b187ba91934ccdbd5632b2ac5ffe6bbd9e287666bcb6bdad29244199eead192&expires=1498214352440&openid=oLfSMuEv6jc8EyozP9qdvROdveGw -->
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>我的高考成绩单</title>
+
+    <meta http-equiv="Cache-control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,minimal-ui, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <!-- <script src="./我的高考成绩单_files/hm.js"></script><script>
+        // document.write('<div id="bigLoadingHolder" style="position:absolute;top:0;z-index:20;background:#fff;height:100%;width:100%"><div id="loadingDiv" style="background:rgba(0,0,0,0.8);border-radius:5px;position:absolute;top:50%;left:50%;margin:-15px 0 0 -40px;width:80px;line-height:30px;font-size:14px;height:30px;text-align:center;color:#f1f1f1">正在加载</div></div>');
+    </script> -->
+    <style>
+      #main {
+         width: 1446px;
+         height: 120px;
+         /*padding: 0.5em;
+         text-align: center;*/
+         vertical-align:middle;
+         border: 1px solid #d3d3d3;
+         float: left;
+         max-width: 100%;
+      }
+
+      #imgDiv{
+         width: 1446px;
+         height: 120px;
+         max-height: 20%;
+         max-width: 100%;
+         /*padding: 0.5em;
+         text-align: center;*/
+         position: relative;
+         vertical-align:middle;
+         border: 1px solid #d3d3d3;
+      }
+      #myImg{
+        max-width: 100%;
+        max-height: 100%;
+        vertical-align: middle;
+        float: left;
+      }
+  </style>
+</head>
+<body>
+    <section id="main-wrap" class="main-wrap">
+        <div class="main-container">
+            <p class="title-box">
+                <!-- <img src="./我的高考成绩单_files/bgTitle.png" width="100%"> -->
+            </p>
+            <form name="submit-form">
+                <div class="content-box">
+                    <!-- <img src="./我的高考成绩单_files/contentBg.png" width="100%"> -->
+                    <div class="content-body">
+                        <div class="content-item flex-parent">
+                            <p class="title">姓名：</p>
+                            <p class="input-box flex-child">
+                              <input type="text" name="name" id="name" class="input" placeholder="请输入你的姓名" maxlength="14">
+                            </p>
+                        </div>
+                        <div class="content-item flex-parent">
+                            <p class="title">我是：</p>
+                            <div class="input-box select-box flex-child">
+                                <select id="type" name="type" class="select">
+                                <option value="">请选择</option>
+                                <option value="1">学魔</option>
+                                <option value="2">学霸</option>
+                                <option value="3">学痞</option>
+                                <option value="4">学民</option>
+                                <option value="5">学渣</option>
+                            </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="submit-box"> -->
+                    <button type="button" onclick="hechen()" >提交</button>
+                <!-- </div> -->
+            </form>
+        </div>
+    </section>
+
+    <div id="pictureLayout" style="display:none">
+        <div style="display:none">
+            <img id="starImg" style="height:100%; width:100%;" src="img/picture.png" />
+        </div>
+        <!-- <canvas id="main" height="730" width="420" style="border:1px solid #d3d3d3;"></canvas> -->
+        <!-- TODO：这里需要绘制图片 -->
+        <canvas id="main" height="350px" width="1446px" style="display:none"></canvas>
+        <!-- <input type="text" id="desc" onblur="hechen()" value="" />-->
+        <div id="imgDiv"></div>
+
+        <div>长按图片可以保存</div>
+    </div>
+
+  <script>
+
+        function tiaozhuan() {
+            var name = document.getElementById("name").value;
+            var type = document.getElementById("type").value;
+            console.log("name = " + name);
+            console.log("type = " + type);
+
+            var params = "?name=" + name + "&type=" + type;
+            console.log("params = " + params);
+
+            // document.window.open("picture.html" + params);
+            window.location.href = "picture.html" + params;
+        }
+            // $(function(){
+            //     hechen();
+            // });
+
+            function getQueryString(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+                var r = window.location.search.substr(1).match(reg);
+                console.log("test = " + decodeURI(r[2]));
+                if (r != null) return decodeURI(r[2]);
+                return null;
+            }
+            // 生成期望最小--到最大的随机值
+            //Math.floor(Math.random()*(max-min+1)+min);
+            function hechen(){
+                document.getElementById("main-wrap").style.visibility="hidden";
+                document.getElementById("pictureLayout").style.visibilty="visibile";
+
+                var mydate = new Date();
+                var date = mydate.getFullYear()+'年'+(mydate.getMonth()+1)+'月'+mydate.getDate() + "日";
+                var mainCtx = getCanvasContext('main');
+                var maxWidth = mainCtx.width;
+                var maxHeight = mainCtx.height;
+                // var type = getQueryString("type");
+                mainCtx.clearRect(0,0,1000,1000);
+                //因为没法直接读取本地图片 所以做了这部操作
+
+                var name = document.getElementById("name").value;
+                var type = document.getElementById("type").value;
+
+                var shuxue = 0; // 数学分数
+                var yuwen = 0;  // 语文分数
+                var yingyu = 0; // 英语分数
+                var zonghe = 0; // 综合分数
+                var zongfen = 0;  // 总分
+                var paiming = 1;  // 分排名
+                var zongpai = 1;  // 总排名
+
+                switch (type) {
+                  case "1": // 学魔
+                  // 总排名1-3w
+                      zongfen = Math.floor(Math.random()*(730-621)+621);
+                      yuwen = Math.floor(Math.random()*(150-110)+110);
+                      shuxue = Math.floor(Math.random()*(150-110)+110);
+                      yingyu = Math.floor(Math.random()*(150-110)+110);
+                      paiming = Math.floor(Math.random()*(10000-1)+1);
+                      zonghe = zongfen-(yingyu+yuwen+shuxue);
+                      zongpai = Math.floor(Math.random()*(paiming+200-paiming-200)+paiming-200);
+                    break;
+                  case "2": // 学霸
+                  // 总排名4w-9w
+                      zongfen = Math.floor(Math.random()*(620-511)+511);
+                      zonghe = Math.floor(Math.random()*(190-70)+70);
+                      yuwen = Math.floor(Math.random()*(110-60)+60);
+                      shuxue = Math.floor(Math.random()*(110-60)+60);
+                      yingyu = zongfen-(zonghe+yuwen+shuxue);
+                      paiming = Math.floor(Math.random()*(69999-10000)+10000);
+                      zongpai = Math.floor(Math.random()*(paiming+200-paiming-200)+paiming-200);
+                    break;
+                  case "3": // 学痞
+                  // 总排名10w-19w
+                      zongfen = Math.floor(Math.random()*(510-430)+430);
+                      yuwen = Math.floor(Math.random()*(110-70)+60);
+                      shuxue = Math.floor(Math.random()*(110-70)+60);
+                      yingyu = Math.floor(Math.random()*(110-70)+70);
+                      zonghe = zongfen-(yingyu+yuwen+shuxue);
+                      paiming = Math.floor(Math.random()*(199999-70000)+70000);
+                      zongpai = Math.floor(Math.random()*(paiming+200-paiming-200)+paiming-200);
+                    break;
+                  case "4": // 学民
+                  // 总排名20w-39w
+                      zongfen = Math.floor(Math.random()*(429-300)+300);
+                      yuwen = Math.floor(Math.random()*(90-60)+60);
+                      shuxue = Math.floor(Math.random()*(90-60)+60);
+                      yingyu = Math.floor(Math.random()*(110-50)+50);
+                      zonghe = zongfen-(yingyu+yuwen+shuxue);
+                      paiming = Math.floor(Math.random()*(399999-200000)+200000);
+                      zongpai = Math.floor(Math.random()*(paiming+200-paiming-200)+paiming-200);
+                    break;
+                  case "5": // 学渣
+                  // 总排名在40w-60w
+                      zongfen = Math.floor(Math.random()*(300-100)+0);
+                      zonghe = Math.floor(Math.random()*(70-0)+0);
+                      yuwen = Math.floor(Math.random()*(zongfen-zonghe-0)+0);
+                      shuxue = Math.floor(Math.random()*(zongfen-zonghe-yuwen-0)+0);
+                      yingyu = zongfen-(zonghe+yuwen+shuxue);
+                      paiming = Math.floor(Math.random()*(600000-400000)+400000);
+                      zongpai = Math.floor(Math.random()*(paiming+200-paiming-200)+paiming-200);
+                    break;
+                }
+
+                var starImg = new Image();
+                starImg.src=$('#starImg').attr('src');
+
+                starImg.onload=function(){
+                    //先把图片绘制在这里
+                    // TODO：1240是宽度，1750是高度
+                    mainCtx.drawImage(starImg,0,0,1446,350);
+
+                    //读取用户的文本
+                    // if($('#desc').val()){
+                    // if(getQueryString("title"))
+                        // mainCtx.font = "small-caps bold 18px STXinwei";
+                        //设置用户文本填充颜色
+                        mainCtx.fillStyle = "black";
+                        //从坐标点(50,50)开始绘制文字
+                        // mainCtx.fillText($('#desc').val(),108,335);
+                        //从坐标点(50,50)开始绘制文字
+                        // mainCtx.fillText(getQueryString("name"),460,499);
+                        //设置时间填充颜色
+                        // mainCtx.font = "small-caps bold 16px STXinwei";
+                        // mainCtx.fillText(getQueryString("type"),326,447);
+
+                        // 填充考生号
+                        mainCtx.font = "small-caps 32px STXinwei";
+                        mainCtx.fillText("201721884",220,135);
+
+                        // 填充姓名
+                        mainCtx.font = "small-caps 32px";
+                        mainCtx.fillText(name,520,135);
+
+                        // 填充日期
+                        mainCtx.font = "small-caps 32px";
+                        mainCtx.fillText(date,1120,135);
+
+                        // 填充语文
+                        mainCtx.font = "small-caps 32px STXinwei";
+                        mainCtx.fillText(yuwen,190,200);
+
+                        // 填充数学
+                        mainCtx.font = "small-caps 32px STXinwei";
+                        mainCtx.fillText(shuxue,430,200);
+
+                        // 填充综合
+                        mainCtx.font = "small-caps 32px STXinwei";
+                        mainCtx.fillText(zonghe,670,200);
+
+                        // 填充英语
+                        mainCtx.font = "small-caps 32px STXinwei";
+                        mainCtx.fillText(yingyu,1000,200);
+
+                        // 填充总成绩
+                        mainCtx.font = "small-caps 32px STXinwei";
+                        mainCtx.fillText(zongfen,220,245);
+
+                        // 填充排位总分
+                        mainCtx.font = "small-caps 32px STXinwei";
+                        mainCtx.fillText(zongpai,480,245);
+
+                        // 填充理科排名
+                        mainCtx.font = "small-caps 32px";
+                        mainCtx.fillText(paiming,750,245);
+                    // }
+
+                };
+            }
+
+            setTimeout(saveImageInfo,600);
+
+            function getCanvasContext(id){
+                return document.getElementById(id).getContext("2d");
+            }
+
+            function saveImageInfo() {
+                var mycanvas = document.getElementById("main");
+                var image = mycanvas.toDataURL("image/jpg");
+                //var w=window.open('about:blank','image from canvas');
+                // console.log("image = " + image);
+                document.getElementById("imgDiv").innerHTML ="<img id='myImg' src='"+image+"'style='max-width:90%; max-height:100%; vertical-align:middle; float:left;' alt='from canvas'/>";
+                // w.document.write("<img src='"+image+"' alt='from canvas'/>");
+            }
+
+            function saveAsLocalImage(){
+                var myCanvas = document.getElementById("main");
+                var image = myCanvas.toDataURL("image/jpg").replace("image/jpg", "image/octet-stream");
+                window.location.href=image;
+                window.document.getElementById("img").write("<img src='"+image+"' alt='from canvas'/>");
+            }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,267 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>我的高考成绩单</title>
+
+    <meta http-equiv="Cache-control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,minimal-ui, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <!-- <script src="./我的高考成绩单_files/hm.js"></script><script>
+        // document.write('<div id="bigLoadingHolder" style="position:absolute;top:0;z-index:20;background:#fff;height:100%;width:100%"><div id="loadingDiv" style="background:rgba(0,0,0,0.8);border-radius:5px;position:absolute;top:50%;left:50%;margin:-15px 0 0 -40px;width:80px;line-height:30px;font-size:14px;height:30px;text-align:center;color:#f1f1f1">正在加载</div></div>');
+    </script> -->
+    <style>
+      #main {
+         width: 1446px;
+         height: 120px;
+         /*padding: 0.5em;
+         text-align: center;*/
+         vertical-align:middle;
+         border: 1px solid #d3d3d3;
+         float: left;
+         max-width: 100%;
+      }
+
+      #imgDiv{
+         width: 1446px;
+         height: 120px;
+         max-height: 20%;
+         max-width: 100%;
+         /*padding: 0.5em;
+         text-align: center;*/
+         position: relative;
+         vertical-align:middle;
+         border: 1px solid #d3d3d3;
+      }
+      #myImg{
+        max-width: 100%;
+        max-height: 100%;
+        vertical-align: middle;
+        float: left;
+      }
+
+      .before {
+          right: 0.7142857143rem;
+          bottom: 2.2857142857rem;
+          background-image: url(img/image2.png);
+          background-size: 253px 209px;
+          background-position: -58px 0;
+          background-repeat: no-repeat;
+          overflow: hidden;
+          display: inline-block;
+          height: 56px;
+          width: 65px;
+      }
+      .main-wrap.after {
+          left: 0.7142857143rem;
+          bottom: 5.8571428571rem;
+          background-image: url(img/image3.png);
+          background-size: 253px 209px;
+          background-position: -19px 0;
+          background-repeat: no-repeat;
+          overflow: hidden;
+          display: inline-block;
+          width: 100%;
+      }
+
+      #bg {
+        background:url(img/bg.png);
+        min-height: 100%;
+        width: 100%;
+        vertical-align: middle;
+        float: left;
+        position: relative;
+      }
+      /*.title-box {
+        padding-left: 2%;
+        padding-right: 7%;
+      }*/
+      .form-bg {
+        padding-left: 10%;
+        padding-right: 10%;
+      }
+      .main-wrap .main-container .content-box {
+          position: relative;
+          width: 90%;
+          margin: 0 auto 0.7142857143rem;
+          margin-top: -60px;
+      }
+      #title-bg {
+          position: absolute;
+          width: 100%;
+          margin: 0 auto 0.7142857143rem;
+          margin-top: -20px;
+          z-index: 1;
+          top: 4%;
+      }
+      .main-wrap .main-container .content-box .content-body {
+          position: absolute;
+          top: 50%;
+          margin-top: -80px;
+          right: 10%;
+          left: 8%;
+          z-index: 1;
+      }
+      .flex-parent {
+        display: flex;
+      }
+      .flex-child {
+        flex: 1;
+      }
+      .input {
+          width: 100%;
+          height: 3.2142857143rem;
+          padding: 0 2.5rem 0 0.7142857143rem;
+          border-radius: 0.3571428571rem;
+          border: 0;
+          line-height: 2.7;
+          background: #eee;
+          font-size: 1.1428571429rem;
+          appearance: none;
+          -moz-appearance: none;
+          -webkit-appearance: none;
+      }
+      .main-wrap .main-container .submit-box .submit-btn {
+          border: 0;
+          background-color: transparent;
+          background-position: 0 -107px;
+          background-repeat: no-repeat;
+          overflow: hidden;
+          display: inline-block;
+      }
+      .submit-box {
+        text-align: center;
+      }
+      .select {
+          width: 100%;
+          height: 3.2142857143rem;
+          padding: 0 2.5rem 0 0.7142857143rem;
+          border-radius: 0.3571428571rem;
+          border: 0;
+          line-height: 2.7;
+          background: #eee;
+          font-size: 1.1428571429rem;
+          appearance: none;
+          -moz-appearance: none;
+          -webkit-appearance: none;
+      }
+      .left-down {
+          right: 0.7142857143rem;
+          bottom: 2.2857142857rem;
+          background-image: url(img/image2.png);
+          background-position: -58px 0;
+          background-repeat: no-repeat;
+          overflow: hidden;
+          display: inline-block;
+          width: 20%;
+          position: absolute;
+      }
+  </style>
+</head>
+<body>
+    <section id="main-wrap" class="main-wrap">
+      <div class="left-down">
+      </div>
+      <div id="bg">
+        <div class="main-container">
+            <div class="title-box">
+              <img src="img/image1.png" width="100%"/>
+              <div id="title-bg">
+                  <img src="img/image4.png" width="100%"/>
+              </div>
+            </div>
+            <form name="submit-form" style="margin-top:30px;">
+                <div class="content-box">
+                    <img src="img/form2.png" width="100%"/>
+                    <div class="content-body">
+                        <div class="content-item flex-parent" style="margin:0 auto;">
+                            <p class="title">姓名：</p>
+                            <p class="input-box flex-child">
+                              <input type="text" name="name" id="name" class="input" placeholder="请输入你的姓名" maxlength="14">
+                            </p>
+                        </div>
+                        <div class="content-item flex-parent" style="margin:0 auto;">
+                            <p class="title">省份：</p>
+                            <div class="input-box select-box flex-child">
+                                <select id="province" name="province" class="select">
+                                    <option value="">请选择</option>
+                                    <option value="广东省">广东省</option>
+                                    <option value="北京市">北京市</option>
+                                    <option value="上海市">上海市</option>
+                                    <option value="重庆市">重庆市</option>
+                                    <option value="福建省">福建省</option>
+                                    <option value="山东省">山东省</option>
+                                    <option value="浙江省">浙江省</option>
+                                    <option value="河南省">河南省</option>
+                                    <option value="安徽省">安徽省</option>
+                                    <option value="江苏省">江苏省</option>
+                                    <option value="江西省">江西省</option>
+                                    <option value="四川省">四川省</option>
+                                    <option value="陕西省">陕西省</option>
+                                    <option value="湖南省">湖南省</option>
+                                    <option value="湖北省">湖北省</option>
+                                    <option value="海南省">海南省</option>
+                                    <option value="甘肃省">甘肃省</option>
+                                    <option value="河北省">河北省</option>
+                                    <option value="青海省">青海省</option>
+                                    <option value="贵州省">贵州省</option>
+                                    <option value="辽宁省">辽宁省</option>
+                                    <option value="天津市">天津市</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="content-item flex-parent">
+                            <p class="title">我是：</p>
+                            <div class="input-box select-box flex-child">
+                                <select id="type" name="type" class="select">
+                                    <option value="">请选择</option>
+                                    <option value="1">学魔</option>
+                                    <option value="2">学霸</option>
+                                    <option value="3">学痞</option>
+                                    <option value="4">学民</option>
+                                    <option value="5">学渣</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-box">
+                    <img class="submit-btn" src="img/buttom.png" width="60%" type="button" onclick="tiaozhuan()" ></img>
+                </div>
+            </form>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function tiaozhuan() {
+          var name = document.getElementById("name").value;
+          var type = document.getElementById("type").value;
+          var province = document.getElementById("province").value;
+
+          if (name == null || name == "") {
+              alert("请输入姓名");
+              return;
+          }
+
+          if (type == null || type == "") {
+              alert("请选择你是学霸还是学渣");
+              return;
+          }
+
+          if (province == null || province == "") {
+              alert("请选择省份");
+              return;
+          }
+
+          console.log("name = " + name);
+          console.log("type = " + type);
+
+          var params = "?name=" + name + "&type=" + type + "&province=" + province;
+          console.log("params = " + params);
+
+          // document.window.open("picture.html" + params);
+          window.location.href = "picture.html" + params;
+      }
+    </script>
+</body>
+</html>
