@@ -142,12 +142,9 @@
         var provinceImg = new Image();
         provinceImg.src = "https://pandakill.github.io/chengji/img/guangdong.png";
 
-        // alert("starImg=" + starImg.src + ";provinceImg.img = " + provinceImg.src);
-
         starImg.onload=function(){
-            //先把图片绘制在这里
-            // TODO：1240是宽度，1750是高度
-            mainCtx.drawImage(starImg,0,0,560,756);
+              //先把图片绘制在这里
+              mainCtx.drawImage(starImg,0,0,560,756);
 
               //设置用户文本填充颜色
               mainCtx.fillStyle = "black";
