@@ -174,7 +174,7 @@
     }
     // 生成期望最小--到最大的随机值
     //Math.floor(Math.random()*(max-min+1)+min);
-    var hecheng = new function(){
+    function hechen(){
         var mydate = new Date();
         var date = mydate.getFullYear()+'年'+(mydate.getMonth()+1)+'月'+mydate.getDate() + "日";
         var mainCtx = getCanvasContext('main');
@@ -260,7 +260,6 @@
             break;
         }
 
-        console.log("zongfen=" + zongfen +";shuxue=" + shuxue +";yingyu="+yingyu+";yuwen="+yuwen+";zonghe="+zonghe);
         if (zongfen > 750
             || shuxue > 150
             || yingyu > 150
