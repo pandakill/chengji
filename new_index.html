@@ -39,30 +39,6 @@
         float: left;
       }
 
-      .before {
-          right: 0.7142857143rem;
-          bottom: 2.2857142857rem;
-          background-image: url(img/image2.png);
-          background-size: 253px 209px;
-          background-position: -58px 0;
-          background-repeat: no-repeat;
-          overflow: hidden;
-          display: inline-block;
-          height: 56px;
-          width: 65px;
-      }
-      .main-wrap.after {
-          left: 0.7142857143rem;
-          bottom: 5.8571428571rem;
-          background-image: url(img/image3.png);
-          background-size: 253px 209px;
-          background-position: -19px 0;
-          background-repeat: no-repeat;
-          overflow: hidden;
-          display: inline-block;
-          width: 100%;
-      }
-
       #bg {
         background:url(img/bg.png);
         min-height: 100%;
@@ -109,13 +85,13 @@
       }
       .input {
           width: 100%;
-          height: 3.2142857143rem;
+          height: 2.5rem;
           padding: 0 2.5rem 0 0.7142857143rem;
           border-radius: 0.3571428571rem;
           border: 0;
           line-height: 2.7;
           background: #eee;
-          font-size: 1.1428571429rem;
+          font-size: 1.0rem;
           appearance: none;
           -moz-appearance: none;
           -webkit-appearance: none;
@@ -133,13 +109,13 @@
       }
       .select {
           width: 100%;
-          height: 3.2142857143rem;
+          height: 2.5rem;
           padding: 0 2.5rem 0 0.7142857143rem;
           border-radius: 0.3571428571rem;
           border: 0;
           line-height: 2.7;
           background: #eee;
-          font-size: 1.1428571429rem;
+          font-size: 1.0rem;
           appearance: none;
           -moz-appearance: none;
           -webkit-appearance: none;
@@ -174,46 +150,46 @@
                     <img src="img/form2.png" width="100%"/>
                     <div class="content-body">
                         <div class="content-item flex-parent" style="margin:0 auto;">
-                            <p class="title">姓名：</p>
+                            <div class="title" style="padding-top:24px">姓名：</div>
                             <p class="input-box flex-child">
                               <input type="text" name="name" id="name" class="input" placeholder="请输入你的姓名" maxlength="14">
                             </p>
                         </div>
                         <div class="content-item flex-parent" style="margin:0 auto;">
-                            <p class="title">省份：</p>
+                            <div class="title" style="padding-top:9px">省份：</div>
                             <div class="input-box select-box flex-child">
-                                <select id="province" name="province" class="select">
-                                    <option value="">请选择</option>
-                                    <option value="广东省">广东省</option>
-                                    <option value="北京市">北京市</option>
-                                    <option value="上海市">上海市</option>
-                                    <option value="重庆市">重庆市</option>
-                                    <option value="福建省">福建省</option>
-                                    <option value="山东省">山东省</option>
-                                    <option value="浙江省">浙江省</option>
-                                    <option value="河南省">河南省</option>
-                                    <option value="安徽省">安徽省</option>
-                                    <option value="江苏省">江苏省</option>
-                                    <option value="江西省">江西省</option>
-                                    <option value="四川省">四川省</option>
-                                    <option value="陕西省">陕西省</option>
-                                    <option value="湖南省">湖南省</option>
-                                    <option value="湖北省">湖北省</option>
-                                    <option value="海南省">海南省</option>
-                                    <option value="甘肃省">甘肃省</option>
-                                    <option value="河北省">河北省</option>
-                                    <option value="青海省">青海省</option>
-                                    <option value="贵州省">贵州省</option>
-                                    <option value="辽宁省">辽宁省</option>
-                                    <option value="天津市">天津市</option>
-                                </select>
+                              <select id="province" name="province" class="select" placeholder="请选择省份">
+                                  <option value="" disabled="" selected="" style="">请选择省份</option>
+                                  <option value="广东省">广东省</option>
+                                  <option value="北京市">北京市</option>
+                                  <option value="上海市">上海市</option>
+                                  <option value="重庆市">重庆市</option>
+                                  <option value="福建省">福建省</option>
+                                  <option value="山东省">山东省</option>
+                                  <option value="浙江省">浙江省</option>
+                                  <option value="河南省">河南省</option>
+                                  <option value="安徽省">安徽省</option>
+                                  <option value="江苏省">江苏省</option>
+                                  <option value="江西省">江西省</option>
+                                  <option value="四川省">四川省</option>
+                                  <option value="陕西省">陕西省</option>
+                                  <option value="湖南省">湖南省</option>
+                                  <option value="湖北省">湖北省</option>
+                                  <option value="海南省">海南省</option>
+                                  <option value="甘肃省">甘肃省</option>
+                                  <option value="河北省">河北省</option>
+                                  <option value="青海省">青海省</option>
+                                  <option value="贵州省">贵州省</option>
+                                  <option value="辽宁省">辽宁省</option>
+                                  <option value="天津市">天津市</option>
+                              </select>
                             </div>
                         </div>
-                        <div class="content-item flex-parent">
-                            <p class="title">我是：</p>
+                        <div class="content-item flex-parent" style="margin-top:12px;">
+                            <div class="title" style="padding-top:9px">我是：</div>
                             <div class="input-box select-box flex-child">
                                 <select id="type" name="type" class="select">
-                                    <option value="">请选择</option>
+                                    <option value="">请选择段位</option>
                                     <option value="1">学魔</option>
                                     <option value="2">学霸</option>
                                     <option value="3">学痞</option>
